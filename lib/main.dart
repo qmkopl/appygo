@@ -1,4 +1,4 @@
-import 'package:appygo/styles/travel_color.dart';
+import 'package:appygo/styles/ygo_color.dart';
 import 'package:appygo/router/pages.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: TravelColor.themeColor),
+        colorScheme: ColorScheme.fromSeed(seedColor: YgoColor.themeColor),
         useMaterial3: true,
       ),
       initialRoute: AppPages.initialRoute,

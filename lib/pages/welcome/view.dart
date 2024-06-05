@@ -45,7 +45,9 @@ class WelcomePage extends GetView<WelcomeController> {
                 Padding(
                   padding: const EdgeInsets.only(top: 48),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed('/duel_stand_by');
+                    },
                     style: ButtonStyle(
                       minimumSize: MaterialStateProperty.all(
                         const Size(100, 40),
@@ -57,7 +59,9 @@ class WelcomePage extends GetView<WelcomeController> {
                 Padding(
                   padding: const EdgeInsets.only(top: 48),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed('/guide');
+                    },
                     style: ButtonStyle(
                       minimumSize: MaterialStateProperty.all(
                         const Size(100, 40),
