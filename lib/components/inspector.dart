@@ -324,7 +324,13 @@ class Inspector extends StatelessWidget {
                               '[${card.kind.value}',
                               style: const TextStyle(fontSize: 12),
                             ),
-                            const Text(']')
+                            ...card.propertyList!.asMap().entries.map(
+                                  (e) => Text(
+                                    '/${e.value}',
+                                    style: const TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                            const Text(']'),
                           ],
                         ),
                       ),
