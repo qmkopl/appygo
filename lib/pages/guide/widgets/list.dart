@@ -1,5 +1,6 @@
-import 'package:appygo/class/card/monster/monster_card.dart';
+import 'package:appygo/class/card/ygo_card.dart';
 import 'package:appygo/components/inspector.dart';
+import 'package:appygo/components/overlay.dart';
 import 'package:appygo/styles/ygo_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -8,10 +9,10 @@ import 'package:get/get.dart';
 import '../index.dart';
 
 class ListWidget extends GetView<GuideController> {
-  final MonsterCard item;
+  final YgoCard card;
   const ListWidget({
     super.key,
-    required this.item,
+    required this.card,
   });
 
   @override
@@ -21,9 +22,10 @@ class ListWidget extends GetView<GuideController> {
       builder: (_) {
         return GestureDetector(
           onTap: () {
-            Get.to(Inspector(
-              card: item,
-            ));
+            // Get.to(Inspector(
+            //   card: item,
+            // ));
+            $inspector.show(child: Inspector(card: card));
           },
           child: Container(
             width: Get.width - 4,
@@ -65,7 +67,7 @@ class ListWidget extends GetView<GuideController> {
                           Stack(
                             children: [
                               Text(
-                                item.name,
+                                card.name,
                                 style: TextStyle(
                                   fontSize: 20,
                                   foreground: Paint()
@@ -75,50 +77,50 @@ class ListWidget extends GetView<GuideController> {
                                 ),
                               ),
                               Text(
-                                item.name,
+                                card.name,
                                 style: TextStyle(
                                   fontSize: 20,
                                   height: 1,
-                                  color: item.rare.color,
+                                  color: card.rare.color,
                                 ),
                               ),
                             ],
                           ),
-                          DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: item.attr.color,
-                              border: Border.all(
-                                color: YgoColor.borderColor,
-                              ),
-                            ),
-                            child: Text(
-                              item.attr.value,
-                              style: TextStyle(
-                                color: item.attr.textColor,
-                              ),
-                            ),
-                          )
+                          // DecoratedBox(
+                          //   decoration: BoxDecoration(
+                          //     color: card.attr.color,
+                          //     border: Border.all(
+                          //       color: YgoColor.borderColor,
+                          //     ),
+                          //   ),
+                          //   child: Text(
+                          //     card.attr.value,
+                          //     style: TextStyle(
+                          //       color: card.attr.textColor,
+                          //     ),
+                          //   ),
+                          // )
                         ],
                       ),
-                      Row(
-                        children: [Text(item.kind.value)],
-                      ),
+                      // Row(
+                      //   children: [Text(card.kind.value)],
+                      // ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                          'ATK: ${item.atk.toString()} DEF: ${item.def.toString()}'),
-                      const Text(
-                        '更多',
-                        style: TextStyle(
-                          color: YgoColor.textSecondColor,
-                          fontSize: 12,
-                        ),
-                      )
-                    ],
-                  )
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     Text(
+                  //         'ATK: ${card.atk.toString()} DEF: ${card.def.toString()}'),
+                  //     const Text(
+                  //       '更多',
+                  //       style: TextStyle(
+                  //         color: YgoColor.textSecondColor,
+                  //         fontSize: 12,
+                  //       ),
+                  //     )
+                  //   ],
+                  // )
                 ],
               ),
             ),

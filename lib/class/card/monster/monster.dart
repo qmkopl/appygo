@@ -1,8 +1,8 @@
 import 'package:appygo/class/card/monster/data.dart' as monster_card;
-import 'package:appygo/class/card/monster/monster_card.dart';
+import 'package:appygo/class/card/monster/ygo_monster.dart';
 
-List<MonsterCard> monster = [
-  monster_card.ChestNutBall(),
-  monster_card.MechaPhantomBeastOLion(),
-  monster_card.DarkRebellionXyzDragon(),
-];
+Map<String, YgoMonsterCard> monster = {
+  'honor_knight': monster_card.HonorKnight(),
+  'fire_dragon': monster_card.FireDragon(),
+  'final_honor_knight': monster_card.FinalHonorKnight()
+};

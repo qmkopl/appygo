@@ -1,8 +1,8 @@
-import 'package:appygo/class/card/monster/monster_card.dart';
+import 'package:appygo/class/card/monster/ygo_monster.dart';
 import 'package:appygo/enum/card.dart';
 import 'package:appygo/enum/monster.dart';
 
-class ChestNutBall extends MonsterCard {
+class ChestNutBall extends YgoMonsterCard {
   @override
   String name;
 
@@ -13,10 +13,10 @@ class ChestNutBall extends MonsterCard {
   int atk;
 
   @override
-  MonsterAttr attr;
+  MonsterCardAttr attr;
 
   @override
-  MonsterKind kind;
+  MonsterCardKind kind;
 
   @override
   CardRare rare;
@@ -28,27 +28,31 @@ class ChestNutBall extends MonsterCard {
   String description;
 
   @override
-  CardType type;
+  CardFinalType finalType;
 
   @override
-  MonsterType monsterType;
+  MonsterCardType monsterType;
 
   @override
-  List<MonsterProperty>? propertyList;
+  List<MonsterCardProperty>? propertyList;
+
+  @override
+  String key;
 
   ChestNutBall({
+    this.key = '0',
     this.name = 'chest nut ball',
     this.atk = 200,
     this.def = 300,
-    this.attr = MonsterAttr.dark,
-    this.kind = MonsterKind.demon,
+    this.attr = MonsterCardAttr.dark,
+    this.kind = MonsterCardKind.demon,
     this.rare = CardRare.n,
     this.level = 3,
     this.description = '1.（庇护）：送入墓地后发动，将所受的战斗伤害归零，同名效果一回合只能发动一次。',
-    this.type = CardType.mainMonster,
-    this.monsterType = MonsterType.effectMonster,
+    this.finalType = CardFinalType.monster,
+    this.monsterType = MonsterCardType.effectMonster,
     this.propertyList,
   }) {
-    propertyList ??= [MonsterProperty.effect];
+    propertyList ??= [MonsterCardProperty.effect];
   }
 }

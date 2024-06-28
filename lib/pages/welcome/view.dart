@@ -2,15 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
-import 'widgets/widgets.dart';
 
 class WelcomePage extends GetView<WelcomeController> {
   const WelcomePage({super.key});
-
-  // 主视图
-  Widget _buildView() {
-    return const HelloWidget();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +29,7 @@ class WelcomePage extends GetView<WelcomeController> {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(
+                      minimumSize: WidgetStateProperty.all(
                         const Size(100, 40),
                       ),
                     ),
@@ -49,7 +43,7 @@ class WelcomePage extends GetView<WelcomeController> {
                       Get.toNamed('/duel_stand_by');
                     },
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(
+                      minimumSize: WidgetStateProperty.all(
                         const Size(100, 40),
                       ),
                     ),
@@ -63,13 +57,13 @@ class WelcomePage extends GetView<WelcomeController> {
                       Get.toNamed('/guide');
                     },
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(
+                      minimumSize: WidgetStateProperty.all(
                         const Size(100, 40),
                       ),
                     ),
                     child: const Text('Guide'),
                   ),
-                )
+                ),
               ],
             ),
           ),
