@@ -1,5 +1,5 @@
 import 'package:appygo/class/card/monster/monster.dart';
-import 'package:appygo/class/player/player.dart';
+import 'package:appygo/util/turn_controller.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
@@ -14,6 +14,12 @@ class DuelStandByController extends GetxController {
     update(['duel_stand_by']);
   }
 
+  late TurnController tc;
+  void turnController() {
+    tc = TurnController([state.playerOne, state.playerTwo]);
+    tc.outA();
+  }
+
   void initHand() {
     state.playerOne.hand.add(monster['fire_dragon']!);
   }
@@ -22,6 +28,7 @@ class DuelStandByController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    turnController();
     initHand();
     update(['duel_stand_by']);
   }
